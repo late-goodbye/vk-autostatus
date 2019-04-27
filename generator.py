@@ -1,5 +1,6 @@
 import time
 import random
+import os
 
 
 class Generator:
@@ -7,6 +8,7 @@ class Generator:
         self.nouns = open('words/nouns.txt', 'r').readlines()
         self.verbs = open('words/verbs.txt', 'r').readlines()
         self.adjectives = open('words/adjectives.txt', 'r').readlines()
+        self.token = os.environ.get('token')
 
     def generate_status(self):
         pattern = "It's {local_time} o'clock. Let's {verb} the {adjective} {noun}!"
@@ -16,6 +18,4 @@ class Generator:
         adjective = self.adjectives[random.randint(0, len(self.adjectives))].strip()
 
         status = pattern.format(local_time=local_time, verb=verb, adjective=adjective, noun=noun)
-
-        time.sleep(1)
         return status
