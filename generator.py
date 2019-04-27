@@ -9,6 +9,7 @@ class Generator:
         self.verbs = open('words/verbs.txt', 'r').readlines()
         self.adjectives = open('words/adjectives.txt', 'r').readlines()
         self.token = os.environ.get('token')
+        time.tzset()
 
     def generate_status(self):
         pattern = "It's {local_time} o'clock. Let's {verb} the {adjective} {noun}!"
