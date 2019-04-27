@@ -9,5 +9,5 @@ while True:
     vk = vk_api.VkApi(token=generator.token)
     status = generator.generate_status()
     vk.method("status.set", {"text": status})
-    print("Set status")
-    time.sleep(60)
+    print("Set status: {status}".format(status=status))
+    time.sleep(30)
