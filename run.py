@@ -5,4 +5,4 @@ if __name__ == '__main__':
     generator = Generator()
 
     while True:
-        generator.generate_status()
+        print(generator.generate_status())
