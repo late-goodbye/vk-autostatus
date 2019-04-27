@@ -10,4 +10,4 @@ while True:
     status = generator.generate_status()
     vk.method("status.set", {"text": status})
     print("Set status: {status}".format(status=status))
-    time.sleep(60)
+    time.sleep(30)
