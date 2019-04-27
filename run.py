@@ -11,5 +11,6 @@ while True:
         status = generator.generate_status()
         vk.method("status.set", {"text": status})
         print("Set status: {status}".format(status=status))
+        time.sleep(1)
     else:
         time.sleep(1)
