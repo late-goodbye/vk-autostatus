@@ -15,10 +15,10 @@ class Generator:
     def generate_status(self):
         pattern = "It's {local_time} o'clock. Let's {verb} the {adjective} {noun} {emojie}"
         local_time = time.strftime('%H:%M', time.localtime())
-        noun = self.nouns[random.randint(0, len(self.nouns))].strip()
-        verb = self.verbs[random.randint(0, len(self.verbs))].strip()
-        adjective = self.adjectives[random.randint(0, len(self.adjectives))].strip()
-        emojie = self.emojies[random.randint(0, len(self.emojies))].strip()
+        noun = self.nouns[random.randint(0, len(self.nouns) - 1)].strip()
+        verb = self.verbs[random.randint(0, len(self.verbs) - 1)].strip()
+        adjective = self.adjectives[random.randint(0, len(self.adjectives) - 1)].strip()
+        emojie = self.emojies[random.randint(0, len(self.emojies) - 1)].strip()
 
         status = pattern.format(local_time=local_time,
                                 verb=verb,
