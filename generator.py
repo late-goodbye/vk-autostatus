@@ -13,7 +13,7 @@ class Generator:
         time.tzset()
 
     def generate_status(self):
-        pattern = "It's {local_time} o'clock. Let's {verb} the {adjective} {noun} {emojie}"
+        pattern = "It's {local_time} o'clock. Let's {verb} the {adjective} {noun}!"
         local_time = time.strftime('%H:%M', time.localtime())
         noun = self.nouns[random.randint(0, len(self.nouns) - 1)].strip()
         verb = self.verbs[random.randint(0, len(self.verbs) - 1)].strip()
@@ -23,6 +23,5 @@ class Generator:
         status = pattern.format(local_time=local_time,
                                 verb=verb,
                                 adjective=adjective,
-                                noun=noun,
-                                emojie=emojie)
+                                noun=noun)
         return status
