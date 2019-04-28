@@ -8,7 +8,6 @@ class Generator:
         self.nouns = open('words/nouns.txt', 'r').readlines()
         self.verbs = open('words/verbs.txt', 'r').readlines()
         self.adjectives = open('words/adjectives.txt', 'r').readlines()
-        self.emojies = open('words/emojies.txt', 'r').readlines()
         self.token = os.environ.get('token')
         time.tzset()
 
@@ -18,7 +17,6 @@ class Generator:
         noun = self.nouns[random.randint(0, len(self.nouns) - 1)].strip()
         verb = self.verbs[random.randint(0, len(self.verbs) - 1)].strip()
         adjective = self.adjectives[random.randint(0, len(self.adjectives) - 1)].strip()
-        emojie = self.emojies[random.randint(0, len(self.emojies) - 1)].strip()
 
         status = pattern.format(local_time=local_time,
                                 verb=verb,
